@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/pex.dir/main.cpp.o -o pex 

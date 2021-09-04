@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g -Wl,--enable-auto-import CMakeFiles/g2_cons.dir/g2_cons.cpp.o -o g2_cons.exe -Wl,--out-implib,libg2_cons.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

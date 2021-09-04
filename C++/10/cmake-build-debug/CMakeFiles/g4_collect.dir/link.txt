@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g -Wl,--enable-auto-import CMakeFiles/g4_collect.dir/g4_collect.cpp.o -o g4_collect.exe -Wl,--out-implib,libg4_collect.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

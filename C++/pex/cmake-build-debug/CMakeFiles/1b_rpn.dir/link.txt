@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/1b_rpn.dir/1b_rpn.cpp.o -o 1b_rpn 

@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/g4_poly.dir/g4_poly.cpp.o -o g4_poly 

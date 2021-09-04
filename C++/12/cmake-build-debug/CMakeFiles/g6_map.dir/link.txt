@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/g6_map.dir/g6_map.cpp.o -o g6_map 

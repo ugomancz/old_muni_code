@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g -Wl,--enable-auto-import CMakeFiles/g2_bittrie.dir/g2_bittrie.cpp.o -o g2_bittrie.exe -Wl,--out-implib,libg2_bittrie.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

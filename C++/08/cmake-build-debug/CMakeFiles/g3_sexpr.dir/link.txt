@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g -Wl,--enable-auto-import CMakeFiles/g3_sexpr.dir/g3_sexpr.cpp.o -o g3_sexpr.exe -Wl,--out-implib,libg3_sexpr.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

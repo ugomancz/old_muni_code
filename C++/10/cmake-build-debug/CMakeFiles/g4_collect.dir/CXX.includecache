@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/git/pb161/10/g4_collect.cpp
+map
+-
+unordered_map
+-
+unordered_set
+-
+set
+-
+vector
+-
+deque
+-
+string
+-
+algorithm
+-
+cassert
+-
+

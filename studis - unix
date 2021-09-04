@@ -1,0 +1,409 @@
+#!/bin/bash
+
+# "Global" variables
+DATA_DIR=/home/xkostik/pv004lab/studis_data/
+FORCE=0
+
+# Parsing options
+while getopts "d:f" OPT; do
+    case $OPT in
+    d) DATA_DIR=$OPTARG;;
+    f) FORCE=1;;
+    *) echo "Invalid flag" >&2 && exit 1;;
+    esac
+done
+
+# Data directory check and logging
+LOG_FILE=$(realpath "$DATA_DIR")/log.txt
+FAKULTY=$(realpath "$DATA_DIR")/fakulty.txt
+SEMESTRY=$(realpath "$DATA_DIR")/semestry.txt
+PREDMETY=$(realpath "$DATA_DIR")/predmety.txt
+STUDENTI=$(realpath "$DATA_DIR")/studenti.txt
+ZAPISY=$(realpath "$DATA_DIR")/zapisy.txt
+ZNAMKY=$(realpath "$DATA_DIR")/znamky.txt
+if ! [ -d "$DATA_DIR" ]; then
+    if ! mkdir "$DATA_DIR" > /dev/null; then
+        echo "Couldn't create directory" >&2 && exit 1
+fi; fi
+if ! [ -w "$DATA_DIR" ]; then echo "Selected directory not writable" >&2 && exit 1; fi
+echo "$(date +"%F %H:%M.%S") $$ ${LOGNAME:=x} $0 $*" >> "$LOG_FILE"
+shift $((OPTIND - 1))
+
+# Basic functions
+function dej-log() {
+    if [ $# -gt "2" ]; then echo "Too many arguments" >&2 && exit 1; fi
+    if [ $# -eq "1" ]; then # if no argument
+        cat "$LOG_FILE"
+    elif grep -E "$2" "$LOG_FILE" > /dev/null; then
+        grep -E "$2" "$LOG_FILE"
+    else exit 1
+    fi
+}
+
+function pomoc() {
+    if [ $# -gt "1" ]; then echo "Too many arguments" >&2 && exit 1; fi
+    echo "Have you tried turning it off and on again?"
+}
+
+function cesta-adresar() {
+    if [ $# -gt "1" ]; then echo "Too many arguments" >&2 && exit 1; fi
+    echo "$DATA_DIR"
+}
+
+function smaz-adresar() {
+    if [ $# -gt "1" ]; then echo "Too many arguments" >&2 && exit 1; fi
+    if [ $FORCE -eq 1 ]; then
+        rm -rf "$DATA_DIR"
+    else echo "This operation needs to be forced using [-f] option" >&2 && exit 1
+    fi
+}
+
+# Faculties
+function fakulta-nazev() {
+    if ! [ $# -eq "3" ]; then echo "Wrong number of arguments" >&2 && exit 1; fi
+    if ! [ -f "$FAKULTY" ]; then echo "This faculty doesn't exist" >&2 && exit 1; fi
+    if ! grep -E "^$2.*" "$FAKULTY" > /dev/null; then echo "This faculty doesn't exist" >&2 && exit 1; fi
+    grep -E "^$2.*" "$FAKULTY" | sed -i -e "s/^$2[#].*/${2}#${3}/" "$FAKULTY"
+}
+
+function fakulta-nova() {
+    if ! [ $# -eq "3" ]; then echo "Wrong number of arguments" >&2 && exit 1; fi
+    if [ ${#2} -gt "8" ]; then echo "ID too long" >&2 && exit 1; fi
+    if [ -f "$FAKULTY" ]; then
+        if grep -E "^$2[#].*" "$FAKULTY" > /dev/null; then
+            echo "Faculty with this ID already exists" >&2 && exit 1;
+    fi; fi
+    printf "%s#%s" "$2" "$3" >> "$FAKULTY"
+    sort -o "$FAKULTY" "$FAKULTY"
+}
+
+function fakulta-vypis() {
+    if [ $# -gt "2" ]; then echo "Too many arguments" >&2 && exit 1; fi
+    printf "%-8s | %s\n" "Fakulta" "Název"
+    echo "--------------------------"
+    if [ $# -eq "2" ]; then # if id was given
+        while read -r LINE; do
+            if echo "$LINE" | grep -E "^${2}[#].*" > /dev/null; then
+                printf "%-8s | %s\n" "$(echo "$LINE" | cut -d "#" -f 1)" "$(echo "$LINE" | cut -d "#" -f 2)"
+            fi
+        done < "$FAKULTY"
+    else # if id not given
+        while read -r LINE; do
+            printf "%-8s | %s\n" "$(echo "$LINE" | cut -d "#" -f 1)" "$(echo "$LINE" | cut -d "#" -f 2)"
+        done < "$FAKULTY"
+    fi
+}
+
+function fakulta-smaz() {
+    if ! [ $# -eq "2" ]; then echo "Wrong number of arguments" >&2 && exit 1; fi
+    if ! grep -E "^$2[#].*" "$FAKULTY" > /dev/null; then echo "Faculty with this ID doesn't exist" >&2 && exit 1; fi
+    if [ -f "$SEMESTRY" ] && grep -E "^$2[#].*" "$SEMESTRY" > /dev/null; then echo "This faculty has registered semesters and cannot be deleted" >&2 && exit 1; fi
+    sed -i -e "/^$2[#].*/d" "$FAKULTY"
+}
+
+# Semesters
+function semestr-novy() {
+    if ! [ $# -eq "5" ]; then echo "Wrong number of arguments" >&2 && exit 1; fi
+    if [ ${#3} -gt "8" ]; then echo "ID too long" >&2 && exit 1; fi
+    if [ -f "$SEMESTRY" ] && grep -E "^$2[#]$3[#].*" "$SEMESTRY" > /dev/null; then echo "Semester with this ID already exists" >&2 && exit 1;fi
+    if ! [ -f "$FAKULTY" ] || ! grep -E "^$2[#].*" "$FAKULTY" > /dev/null; then echo "This faculty doesn't exist" >&2 && exit 1; fi
+    if ! echo "$4" | grep -E "^[0-9-]*$" > /dev/null; then echo "Please use correct YYYY-MM-DD format for date" >&2 && exit 1; fi
+    if ! date -d "$4" +%s > /dev/null; then printf "%s is invalid date\n" "$4" >&2 && exit 1; fi
+    if [ "$(date -d "$4" +%s)" -lt "$(date -d "2000-01-01" +%s)" ]; then echo "Date too early" >&2 && exit 1; fi
+    if [ "$(date -d "$4" +%s)" -gt "$(date -d "+2 years" +%s)" ]; then echo "Date too late" >&2 && exit 1; fi
+    printf "%s#%s#%s#%s\n" "$2" "$3" "$4" "$5" >> "$SEMESTRY"
+    sort -t# -k3,3 -k1,1 -o "$SEMESTRY" "$SEMESTRY"
+}
+
+function semestr-vypis() {
+    if [ $# -gt "3" ]; then echo "Too many arguments" >&2 && exit 1; fi
+    if [ $# -eq "2" ] && ! grep -E "^$2[#].*" "$SEMESTRY" > /dev/null; then echo "This faculty doesn't exist" >&2 && exit 1; fi
+    if [ $# -eq "3" ] && ! grep -E "^$2[#]$3[#].*" "$SEMESTRY" > /dev/null; then echo "This faculty or semester doesn't exist" >&2 && exit 1; fi
+    printf "%-8s | %-8s | %-10s | %s\n" "Fakulta" "Semestr" "Od" "Název"
+    echo "-----------------------------------------"
+    if [ $# -eq "1" ]; then # no argument given
+        while read -r LINE; do
+            printf "%-8s | %-8s | %-10s | %s\n" "$(echo "$LINE" | cut -d '#' -f 1)" "$(echo "$LINE" | cut -d '#' -f 2)" \
+                                           "$(echo "$LINE" | cut -d '#' -f 3)" "$(echo "$LINE" | cut -d '#' -f 4)"
+        done < "$SEMESTRY"
+    elif [ $# -eq "2" ]; then # faculty was specified
+        while read -r LINE; do
+            if echo "$LINE" | grep -E "^$2[#].*" > /dev/null; then
+                printf "%-8s | %-8s | %-10s | %s\n" "$(echo "$LINE" | cut -d '#' -f 1)" "$(echo "$LINE" | cut -d '#' -f 2)" \
+                                               "$(echo "$LINE" | cut -d '#' -f 3)" "$(echo "$LINE" | cut -d '#' -f 4)"
+            fi
+        done < "$SEMESTRY"
+    else # faculty and id were specified
+        while read -r LINE; do
+            if echo "$LINE" | grep -E "^$2[#]$3.*" > /dev/null; then
+                printf "%-8s | %-8s | %-10s | %s\n" "$(echo "$LINE" | cut -d '#' -f 1)" "$(echo "$LINE" | cut -d '#' -f 2)" \
+                                               "$(echo "$LINE" | cut -d '#' -f 3)" "$(echo "$LINE" | cut -d '#' -f 4)"
+            fi
+        done < "$SEMESTRY"
+    fi
+}
+
+function semestr-nazev() {
+    if ! [ $# -eq "4" ]; then echo "Wrong number of arguments" >&2 && exit 1; fi
+    if ! grep -E "^$2[#]$3[#].*" "$SEMESTRY" > /dev/null; then echo "This semester doesn't exist" >&2 && exit 1; fi
+    sed -i -e "s/^$2[#]$3[#]\([^#]*\).*/$2#$3#\1#$4/" "$SEMESTRY"
+}
+
+function semestr-datum() {
+    if ! [ $# -eq "4" ]; then echo "Wrong number of arguments" >&2 && exit 1; fi
+    if ! grep -E "^$2[#]$3[#].*" "$SEMESTRY" > /dev/null; then echo "This semester doesn't exist" >&2 && exit 1; fi
+    if ! echo "$4" | grep -E "^[0-9-]*$" > /dev/null; then echo "Please use correct YYYY-MM-DD format for date" >&2 && exit 1; fi
+    if ! date -d "$4" +%s > /dev/null; then printf "%s is invalid date\n" "$4" >&2 && exit 1; fi
+    if [ "$(date -d "$4" +%s)" -lt "$(date -d "2000-01-01" +%s)" ]; then echo "Date too early" >&2 && exit 1; fi
+    if [ "$(date -d "$4" +%s)" -gt "$(date -d "+2 years" +%s)" ]; then echo "Date too late" >&2 && exit 1; fi
+    sed -i -e "s/^$2[#]$3[#][^#]*[#]\([^#]*\)/$2#$3#$4#\1/" "$SEMESTRY"
+}
+
+function semestr-smaz() {
+    if ! [ $# -eq "3" ]; then echo "Wrong number of arguments" >&2 && exit 1; fi
+    if ! grep -E "^$2[#]$3[#].*" "$SEMESTRY" > /dev/null; then echo "This semester doesn't exist" >&2 && exit 1; fi
+    if [ -f "$PREDMETY" ] && grep -E "^$2[#]$3[#].*" "$PREDMETY" > /dev/null; then echo "Can't delete a semester with active courses" >&2 && exit 1; fi
+    sed -i -e "/^$2[#]$3[#].*/d" "$SEMESTRY"
+}
+
+# Courses
+function predmet-novy() {
+    if ! [ $# -eq "7" ]; then echo "Wrong number of arugments" >&2 && exit 1; fi
+    if [ -f "$FAKULTY" ] && ! grep -E "^$2[#].*" "$FAKULTY" > /dev/null; then echo "This faculty doesn't exist" >&2 && exit 1; fi
+    if [ -f "$SEMESTRY" ] && ! grep -E "^$2[#]$3[#].*" "$SEMESTRY" > /dev/null; then echo "This semester doesn't exist" >&2 && exit 1; fi
+    if ! echo "$4" | grep -E "^[a-zA-Z][a-zA-Z_0-9]*" > /dev/null || [ ${#4} -gt "8" ]; then echo "Invalid ID format" >&2 && exit 1; fi
+    if [ -f "$PREDMETY" ] && grep -E -i "^[^#]*[#][^#]*[#]$4[#].*" "$PREDMETY" > /dev/null; then echo "This course already exists" >&2 && exit 1; fi
+    if ! echo "$5" | grep -E "^[\u0021-\u024F\ ]*" > /dev/null; then echo "Can't accept course with this name" >&2 && exit 1; fi
+    if [ "$6" != "zk" ] && [ "$6" != "k" ] && [ "$6" != "z" ]; then echo "Invalid completion of course" >&2 && exit 1; fi
+    if ! [ "$7" -eq "$7" ] 2> /dev/null || [ "$7" -gt "20" ] || [ "$7" -lt "0" ]; then echo "Invalid number of credits, please use 0-20" >&2 && exit 1; fi
+    printf "%s#%s#%s#%s#%s#%s\n" "$2" "$3" "$4" "$6" "$7" "$5" >> "$PREDMETY"
+}
+
+function predmet-vypis() {
+    if ! [ -f "$PREDMETY" ]; then echo "No courses in the database" >&2 && exit 1; fi
+    sort -t# -k1,1 -k2,2 -k3,3 -o "$PREDMETY" "$PREDMETY"
+    if [ "$#" -gt "4" ]; then echo "Too many arguments!" >&2 && exit 1; fi
+    case $# in
+        "2") if ! grep -E "^$2[#].*" "$PREDMETY" > /dev/null; then echo "This faculty doesn't exist" >&2 && exit 1; fi;;
+        "3") if ! grep -E "^$2[#]$3[#].*" "$PREDMETY" > /dev/null; then echo "This faculty or semester doesn't exist" >&2 && exit 1; fi;;
+        "4") if ! grep -E -i "^$2[#]$3[#]$4[#].*" "$PREDMETY" > /dev/null; then echo "No matches to this filter" >&2 && exit 1; fi;;
+    esac
+    printf "%-8s | %-8s | %-8s | %-2s | %2s | %s\n" "Fakulta" "Semestr" "Kurz" "Uk" "Kr" "Název"
+    echo "----------------------------------------------------"
+    case $# in
+        "1") while read -r LINE; do
+                printf "%-8s | %-8s | %-8s | %-2s | %2s | %s\n" "$(echo "$LINE" | cut -d '#' -f 1)" "$(echo "$LINE" | cut -d '#' -f 2)" \
+                                            "$(echo "$LINE" | cut -d '#' -f 3)" "$(echo "$LINE" | cut -d '#' -f 4)" \
+                                            "$(echo "$LINE" | cut -d '#' -f 5)" "$(echo "$LINE" | cut -d '#' -f 6)"
+            done < "$PREDMETY";;
+        "2") while read -r LINE; do
+                if echo "$LINE" | grep -E "^$2[#].*" > /dev/null; then
+                    printf "%-8s | %-8s | %-8s | %-2s | %2s | %s\n" "$(echo "$LINE" | cut -d '#' -f 1)" "$(echo "$LINE" | cut -d '#' -f 2)" \
+                                                "$(echo "$LINE" | cut -d '#' -f 3)" "$(echo "$LINE" | cut -d '#' -f 4)" \
+                                                "$(echo "$LINE" | cut -d '#' -f 5)" "$(echo "$LINE" | cut -d '#' -f 6)"
+                fi
+            done < "$PREDMETY";;
+        "3") while read -r LINE; do
+                if echo "$LINE" | grep -E "^$2[#]$3[#].*" > /dev/null; then
+                    printf "%-8s | %-8s | %-8s | %-2s | %2s | %s\n" "$(echo "$LINE" | cut -d '#' -f 1)" "$(echo "$LINE" | cut -d '#' -f 2)" \
+                                                "$(echo "$LINE" | cut -d '#' -f 3)" "$(echo "$LINE" | cut -d '#' -f 4)" \
+                                                "$(echo "$LINE" | cut -d '#' -f 5)" "$(echo "$LINE" | cut -d '#' -f 6)"
+                fi
+            done < "$PREDMETY";;
+        "4") while read -r LINE; do
+                if echo "$LINE" | grep -E -i "^$2[#]$3[#]$4[#].*" > /dev/null; then
+                    printf "%-8s | %-8s | %-8s | %-2s | %2s | %s\n" "$(echo "$LINE" | cut -d '#' -f 1)" "$(echo "$LINE" | cut -d '#' -f 2)" \
+                                                "$(echo "$LINE" | cut -d '#' -f 3)" "$(echo "$LINE" | cut -d '#' -f 4)" \
+                                                "$(echo "$LINE" | cut -d '#' -f 5)" "$(echo "$LINE" | cut -d '#' -f 6)"
+                fi
+            done < "$PREDMETY";;
+    esac
+}
+
+function predmet-smaz() {
+    if ! [ $# -eq "4" ]; then echo "Wrong number of arguments" >&2 && exit 1; fi
+    if ! grep -E -i "^$2[#]$3[#]${4^^}[#].*" "$PREDMETY" > /dev/null; then echo "This course doesn't exist" >&2 && exit 1; fi
+    if [ -f "$ZAPISY" ] && grep -E -i "^$2[#]$3[#]$4[#].*" "$ZAPISY" > /dev/null; then echo "Can't delete course with students" >&2 && exit 1; fi
+    sed -i -e "/^$2[#]$3[#]${4^^}[#].*/Id" "$PREDMETY"
+}
+
+function predmet-nazev() {
+    if ! [ $# -eq "5" ]; then echo "Wrong number of arguments" >&2 && exit 1; fi
+    if ! grep -E "^$2[#]$3[#]${4^^}[#].*" "$PREDMETY" > /dev/null; then echo "This course doesn't exist" >&2 && exit 1; fi
+    sed -i -e "s/^$2[#]$3[#]${4^^}[#]\([^#]*[#][^#]*\)[#].*/$2#$3#${4^^}#\1#$5/" "$PREDMETY"
+}
+
+function predmet-kredity() {
+    if ! [ $# -eq "5" ]; then echo "Wrong number of arguments" >&2 && exit 1; fi
+    if ! grep -E "^$2[#]$3[#]${4^^}[#].*" "$PREDMETY" > /dev/null; then echo "This course doesn't exist" >&2 && exit 1; fi
+    sed -i -e "s/^$2[#]$3[#]${4^^}[#]\([^#]*\)[#][^#]*[#]\(.*\)/$2#$3#${4^^}#\1#$5#\2/" "$PREDMETY"
+}
+
+function predmet-ukonceni() {
+    if ! [ $# -eq "5" ]; then echo "Wrong number of arguments" >&2 && exit 1; fi
+    if ! grep -E "^$2[#]$3[#]${4^^}[#].*" "$PREDMETY" > /dev/null; then echo "This course doesn't exist" >&2 && exit 1; fi
+    sed -i -e "s/^$2[#]$3[#]${4^^}[#][^#]*[#]\([^#]*\)[#]\(.*\)/$2#$3#${4^^}#$5#\1#\2/" "$PREDMETY"
+}
+
+# Students
+function student-novy() {
+    if ! [ $# -eq "6" ]; then echo "Wrong number of arguments" >&2 && exit 1; fi
+    if ! [ "$2" -eq "$2" ] 2>/dev/null || [ "$2" -lt "1" ]; then echo "Učo in wrong format" >&2 && exit 1; fi
+    if [ -f "$STUDENTI" ] && grep -E "^$2[#].*" "$STUDENTI" > /dev/null; then echo "Student with this učo already exists" >&2 && exit 1; fi
+    if [ -z "$3" ] || [ -z "$4" ]; then echo "First and Last name cannot be empty arguments" >&2 && exit 1; fi
+    if ! echo "$5" | grep -E "^[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]$" > /dev/null || \
+       ! date -d "$5" +%s > /dev/null
+       then printf "%s is invalid date\n" "$5" >&2 && exit 1
+    fi
+    if [ "$(date -d "$5" +%s)" -lt "$(date -d "1900-01-01" +%s)" ]; then echo "Date too early" >&2 && exit 1; fi
+    if [ "$(date -d "$5" +%s)" -gt "$(date +%s)" ]; then echo "Date too late" >&2 && exit 1; fi
+    if ! echo "$6" | grep -E "^[0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.@_-]+$" > /dev/null || \
+       ! echo "$6" | grep -E "^[^@][^@]*@[^\.@][^@]*\.[^@]*[^\.@]$" > /dev/null || \
+       echo "$6" | grep -E "^.*@[^.]*\.\.[^.]*" > /dev/null
+    then echo "Email in wrong format" >&2 && exit 1
+    fi
+    printf "%s#%s#%s#%s#%s\n" "$2" "$3" "$4" "$5" "$6" >> "$STUDENTI"
+}
+
+function student-export() {
+    if ! [ $# -eq "1" ]; then echo "Wrong number of arguments" >&2 && exit 1; fi
+    if ! [ -f "$STUDENTI" ] || [ "$(cat "$STUDENTI" | wc -l)" -eq "0" ]; then echo "No students in the database" >&2 && exit 1; fi
+    sort -t# -n -k1,1 -o "$STUDENTI" "$STUDENTI"
+    cat "$STUDENTI" | cut -d '#' --output-delimiter=';' -f 1,5
+}
+
+function student-smaz() {
+    if ! [ $# -eq "2" ]; then echo "Wrong number of arguments" >&2 && exit 1; fi
+    if ! grep -E "^$2[#].*" "$STUDENTI" > /dev/null; then echo "This student doesn't exist" >&2 && exit 1; fi
+    if [ -f "$ZAPISY" ] && grep -E "[#]$2$" "$ZAPISY" > /dev/null; then echo "Can't delete student with active courses" >&2 && exit 1; fi
+    sed -i -e "/^$2[#].*/d" "$STUDENTI"
+}
+
+# Sign-ups and marks
+function zapis() {
+    if ! [ $# -eq "5" ]; then echo "Wrong number of arguments" >&2 && exit 1; fi
+    if ! [ -f "$PREDMETY" ] || ! grep -E -i "^[^#]*[#][^#]*[#]$4[#].*" "$PREDMETY" > /dev/null; then echo "This course doesn't exist" >&2 && exit 1; fi
+    if ! [ -f "$STUDENTI" ] || ! grep -E "^$5[#].*" "$STUDENTI" > /dev/null; then echo "This student doesn't exist" >&2 && exit 1; fi
+    if [ -f "$ZAPISY" ] && grep -E "^$2[#]$3[#]$4[#]$5$" "$ZAPISY" > /dev/null; then echo "Already in the system" >&2 && exit 1; fi
+    printf "%s#%s#%s#%s\n" "$2" "$3" "$4" "$5" >> "$ZAPISY"
+}
+
+function zapis-predmet() {
+    if ! [ $# -eq "4" ]; then echo "Wrong number of arguments" >&2 && exit 1; fi
+    if ! grep -E -i "$4[#][^#]*$" "$ZAPISY" > /dev/null; then echo "No such course" >&2 && exit 1; fi
+    TEMP="$(realpath "$DATA_DIR")/temp.txt"
+    while read -r LINE; do
+        if echo "$LINE" | grep -E -i "^$2[#]$3[#]$4[#].*" > /dev/null; then 
+            UCO="$(echo "$LINE" | cut -d '#' -f 4)"
+            sed -n -e "s/^${UCO}[#]\([^#]*\)[#]\([^#]*\)[#].*/\2#\1#$UCO/p" "$STUDENTI" >> "$TEMP"
+        fi
+    done < "$ZAPISY"
+    if ! [ -f "$TEMP" ]; then exit 0; fi
+    sort -t# -k3,3 -g -o "$TEMP" "$TEMP"
+    sort -t# -s -k1,1 -k2,2 -o "$TEMP" "$TEMP"
+    while read -r LINE; do
+        printf "%s, %s; učo %s\n" "$(echo "$LINE" | cut -d '#' -f 1)" "$(echo "$LINE" | cut -d '#' -f 2)" "$(echo "$LINE" | cut -d '#' -f 3)"
+    done < "$TEMP"
+    rm -f "$TEMP"
+}
+
+function znamka() {
+    if ! [ $# -eq "6" ]; then echo "Wrong number of arguments" >&2 && exit 1; fi
+    if [ -f "$ZAPISY" ] && ! grep -E -i "^$2#$3#$4#$5$" "$ZAPISY" > /dev/null; then echo "Student didn't sign up for this course" >&2 && exit 1; fi
+    UKONCENI="$(grep -E "^$2[#]$3[#]$4[#].*" "$PREDMETY" | cut -d '#' -f 4)"
+    case "$UKONCENI" in
+        "zk") if ! echo "$6" | grep -E "^[ABCDEF]$" > /dev/null; then echo "Invalid mark" >&2 && exit 1; fi;;
+        "z") if ! echo "$6" | grep -E "^[ZN]$" > /dev/null; then echo "Invalid mark" >&2 && exit 1; fi;;
+        "k") if ! echo "$6" | grep -E "^[PN]$" > /dev/null; then echo "Invalid mark" >&2 && exit 1; fi;;
+    esac
+    if [ -f "$ZNAMKY" ] && [ "$(grep -E -c "^$2[#]$3[#]$4[#]$5[#].*" "$ZNAMKY")" -gt "2" ]; then echo "Student already has 3 marks" >&2 && exit 1; fi
+    if [ -f "$ZNAMKY" ] && grep -E "^$2[#]$3[#]$4[#]$5[#][^NF]*$" "$ZNAMKY" > /dev/null; then echo "Student has already passed the course" >&2 && exit 1; fi
+    printf "%s#%s#%s#%s#%s#%s\n" "$2" "$3" "$4" "$5" "$6" "$(date +"%F %H:%M.%S")" >> "$ZNAMKY"
+}
+
+function znamka-vypis-uco() {
+    TEMP="$(realpath "$DATA_DIR")/temp.txt"
+    while read -r LINE; do
+        if echo "$LINE" | grep -E "$2[#][^#]*[#][^#]*$" > /dev/null; then 
+            KOD="$(echo "$LINE" | cut -d '#' -f 3)"
+            ZNAMKA="$(echo "$LINE" | cut -d '#' -f 5)"
+            CAS="$(echo "$LINE" | cut -d '#' -f 6)"
+            NAZEV="$(grep -E -i "^[^#]*[#][^#]*[#]${KOD}[#].*" "$PREDMETY" | cut -d '#' -f 6)"
+            printf "%s#%s#%s#%s\n" "${KOD^^}" "$NAZEV" "$ZNAMKA" "$CAS" >> "$TEMP"
+        fi
+    done < "$ZNAMKY"
+    if ! [ -f "$TEMP" ]; then exit 0; fi
+    sort -t# -k1,1 -k4,4 -o "$TEMP" "$TEMP"
+    while read -r LINE; do
+        printf "%s %s: %s\n" "$(echo "$LINE" | cut -d '#' -f 1)" "$(echo "$LINE" | cut -d '#' -f 2)" "$(echo "$LINE" | cut -d '#' --output-delimiter=' ' -f 3,4)"
+    done < "$TEMP"
+    rm -f "$TEMP"
+}
+
+function znamka-vypis-predmet() { # fakulta semestr kod
+    TEMP="$(realpath "$DATA_DIR")/temp.txt"
+    while read -r LINE; do
+    #echo "line: $LINE"
+        if echo "$LINE" | grep -E -i "^$2[#]$3[#]$4[#].*" > /dev/null; then 
+            #echo "added to temp"
+            UCO="$(echo "$LINE" | cut -d '#' -f 4)"
+            STUDENT="$(grep -E "^${UCO}[#].*" "$STUDENTI" | cut -d '#' -f 3,2 --output-delimiter='#')"
+            ZNAMKA="$(echo "$LINE" | cut -d '#' -f 5)"
+            CAS="$(echo "$LINE" | cut -d '#' -f 6)"
+            printf "%s#%s#%s#%s\n" "$STUDENT" "$UCO" "$ZNAMKA" "$CAS" >> "$TEMP"
+        fi
+    done < "$ZNAMKY"
+    if ! [ -f "$TEMP" ]; then exit 0; fi
+    #cat "$TEMP"
+    sort -t# -k2,2 -k1,1 -k5,5 -o "$TEMP" "$TEMP"
+    while read -r LINE; do
+        printf "%s, %s; učo %s: %s %s\n" "$(echo "$LINE" | cut -d '#' -f 2)" "$(echo "$LINE" | cut -d '#' -f 1)" "$(echo "$LINE" | cut -d '#' -f 3)" \
+                                         "$(echo "$LINE" | cut -d '#' -f 4)" "$(echo "$LINE" | cut -d '#' -f 5)"
+    done < "$TEMP"
+    rm -f "$TEMP"
+}
+
+function znamka-vypis() {
+    if ! [ $# -eq "2" ] && ! [ $# -eq "4" ]; then echo "Wrong number of arguments" >&2 && exit 1; fi
+    if [ $# -eq "2" ]; then znamka-vypis-uco "$@"; fi
+    if [ $# -eq "4" ]; then znamka-vypis-predmet "$@"; fi
+}
+
+function zapis-smaz() {
+    if ! [ $# -eq "5" ]; then echo "Wrong number of arguments" >&2 && exit 1; fi
+    sed -i -e "/^$2[#]$3[#]$4[#]$5/d" "$ZAPISY"
+    sed -i -e "/^$2[#]$3[#]$4[#]$5[#].*/d" "$ZNAMKY"
+}
+
+# Parsing first non-option argument
+case $1 in
+    dej-log) dej-log "$@";;
+    pomoc) pomoc "$@";;
+    cesta-adresar|cesta-adresář) cesta-adresar "$@";;
+    smaz-adresar|smaž-adresář) smaz-adresar "$@";;
+    fakulta-nova|fakulta-nová) fakulta-nova "$@";;
+    fakulta-nazev|fakulta-název) fakulta-nazev "$@";;
+    fakulta-vypis|fakulta-výpis) fakulta-vypis "$@";;
+    fakulta-smaz|fakulta-smaž) fakulta-smaz "$@";;
+    semestr-novy|semestr-nový) semestr-novy "$@";;
+    semestr-vypis|semestr-výpis) semestr-vypis "$@";;
+    semestr-nazev|semestr-název) semestr-nazev "$@";;
+    semestr-datum) semestr-datum "$@";;
+    semestr-smaz|semestr-smaž) semestr-smaz "$@";;
+    predmet-novy|předmět-nový) predmet-novy "$@";;
+    predmet-vypis|předmět-výpis) predmet-vypis "$@";; 
+    predmet-smaz|předmět-smaž) predmet-smaz "$@";;
+    predmet-nazev|předmět-název) predmet-nazev "$@";;
+    predmet-kredity|předmět-kredity) predmet-kredity "$@";;
+    predmet-ukonceni|předmět-ukončení) predmet-ukonceni "$@";;
+    student-novy|student-nový) student-novy "$@";;
+    student-export) student-export "$@";;
+    student-smaz|student-smaž) student-smaz "$@";;
+    zapis|zápis) zapis "$@";;
+    zapis-predmet|zápis-předmět) zapis-predmet "$@";;
+    znamka|známka) znamka "$@";;
+    znamka-vypis|známka-výpis) znamka-vypis "$@";;
+    zapis-smaz|zápis-smaž) zapis-smaz "$@";;
+    *) echo "Missing or unknown argument" >&2 && exit 1;;
+esac
+exit 0

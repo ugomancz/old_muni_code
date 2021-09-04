@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/g3_zip.dir/g3_zip.cpp.o -o g3_zip 

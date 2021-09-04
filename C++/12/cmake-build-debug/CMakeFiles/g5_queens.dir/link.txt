@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/g5_queens.dir/g5_queens.cpp.o -o g5_queens 

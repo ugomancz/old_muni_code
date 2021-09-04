@@ -1,0 +1,1 @@
+/usr/bin/cc  -std=c99 -Wall -Wextra -pedantic -g  -rdynamic CMakeFiles/ascii85.dir/ascii85.c.o  -o ascii85 

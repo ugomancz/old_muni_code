@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/git/pb161/pex/1b_rpn.cpp
+cassert
+-
+exception
+-
+vector
+-
+string
+-
+set
+-
+numeric
+-
+

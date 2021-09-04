@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g -Wl,--enable-auto-import CMakeFiles/g3_map.dir/g3_map.cpp.o -o g3_map.exe -Wl,--out-implib,libg3_map.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

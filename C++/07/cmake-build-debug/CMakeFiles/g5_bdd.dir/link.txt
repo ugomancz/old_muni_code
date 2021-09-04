@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g -Wl,--enable-auto-import CMakeFiles/g5_bdd.dir/g5_bdd.cpp.o -o g5_bdd.exe -Wl,--out-implib,libg5_bdd.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/git/pb161/t3/tree.cpp
+tree.hpp
+/mnt/c/git/pb161/t3/tree.hpp
+cassert
+-
+iostream
+-
+
+/mnt/c/git/pb161/t3/tree.hpp
+vector
+-
+memory
+-
+iostream
+-
+

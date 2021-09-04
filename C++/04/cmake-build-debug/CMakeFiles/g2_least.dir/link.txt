@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/g2_least.dir/g2_least.cpp.o  -o g2_least.exe -Wl,--out-implib,libg2_least.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

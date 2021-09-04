@@ -1,0 +1,30 @@
+# Exceptions and RAII
+
+Demonstrations:
+
+ 1. ‹exceptions› – throwing and catching exceptions
+ 2. ‹stdexcept›  – the standard exception hierarchy
+ 3. ‹semaphore›  – automatic management of finite resources
+ 4. ‹overlord›   – keeping the swarm under control
+
+Elementary exercises:
+
+ 1. ‹default›    – read a number or return a default value
+ 2. ‹counter›    – count the number of instances of a class
+ 3. ‹coffee›     – a simple model of a coffee machine
+ 4. ‹lock›       – (tbd) a movable mutual exclusion token
+
+Free exercises:
+
+ 1. ‹printing›   – (tbd) printing with a monthly budget
+ 2. ‹car›        – (tbd) moving around car keys
+ 3. ‹enzyme›     – (tbd) cellular chemistry with RAII
+
+Graded Exercises:
+
+ 1. ‹fd›         – POSIX file descriptors
+ 2. ‹loan›       – database-style transactions with resources
+ 3. ‹library›    – borrowing books
+ 4. ‹parse›      – a simple parser which throws exceptions
+ 5. ‹invest›     – we further stretch the banking story
+ 6. ‹linear›     – linear equations, with some exceptions

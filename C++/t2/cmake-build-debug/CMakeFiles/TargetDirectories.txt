@@ -1,0 +1,7 @@
+/mnt/c/git/pb161/t2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/git/pb161/t2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/git/pb161/t2/cmake-build-debug/CMakeFiles/parser.dir
+/mnt/c/git/pb161/t2/cmake-build-debug/CMakeFiles/machine.dir
+/mnt/c/git/pb161/t2/cmake-build-debug/CMakeFiles/natural_test.dir
+/mnt/c/git/pb161/t2/cmake-build-debug/CMakeFiles/natural.dir
+/mnt/c/git/pb161/t2/cmake-build-debug/CMakeFiles/complex.dir

@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/g6_linear.dir/g6_linear.cpp.o  -o g6_linear.exe -Wl,--out-implib,libg6_linear.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

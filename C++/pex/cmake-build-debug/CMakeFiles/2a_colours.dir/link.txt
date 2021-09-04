@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/2a_colours.dir/2a_colours.cpp.o -o 2a_colours 

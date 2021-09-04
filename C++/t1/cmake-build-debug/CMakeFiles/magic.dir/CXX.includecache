@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/git/pb161/t1/magic.cpp
+cassert
+-
+numeric
+-
+magic.hpp
+/mnt/c/git/pb161/t1/magic.hpp
+
+/mnt/c/git/pb161/t1/magic.hpp
+vector
+-
+set
+-
+

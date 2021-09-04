@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/git/pb161/09/g3_stats.cpp
+utility
+-
+vector
+-
+forward_list
+-
+set
+-
+cassert
+-
+map
+-
+algorithm
+-
+

@@ -1,0 +1,1 @@
+/usr/bin/c++  -O0 -g CMakeFiles/natural_test.dir/natural_test.cpp.o -o natural_test 

@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g -Wl,--enable-auto-import CMakeFiles/g5_list.dir/g5_list.cpp.o -o g5_list.exe -Wl,--out-implib,libg5_list.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

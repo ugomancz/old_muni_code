@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g -Wl,--enable-auto-import CMakeFiles/g1_prisoner.dir/g1_prisoner.cpp.o -o g1_prisoner.exe -Wl,--out-implib,libg1_prisoner.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

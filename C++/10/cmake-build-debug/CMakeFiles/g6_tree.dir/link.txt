@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g -Wl,--enable-auto-import CMakeFiles/g6_tree.dir/g6_tree.cpp.o -o g6_tree.exe -Wl,--out-implib,libg6_tree.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

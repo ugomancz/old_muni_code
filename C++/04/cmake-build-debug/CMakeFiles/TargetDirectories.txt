@@ -1,0 +1,8 @@
+/cygdrive/c/git/pb161/04/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/cygdrive/c/git/pb161/04/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cygdrive/c/git/pb161/04/cmake-build-debug/CMakeFiles/g6_eval.dir
+/cygdrive/c/git/pb161/04/cmake-build-debug/CMakeFiles/g5_rpn.dir
+/cygdrive/c/git/pb161/04/cmake-build-debug/CMakeFiles/g4_zipper.dir
+/cygdrive/c/git/pb161/04/cmake-build-debug/CMakeFiles/g3_area.dir
+/cygdrive/c/git/pb161/04/cmake-build-debug/CMakeFiles/g2_least.dir
+/cygdrive/c/git/pb161/04/cmake-build-debug/CMakeFiles/g1_format.dir

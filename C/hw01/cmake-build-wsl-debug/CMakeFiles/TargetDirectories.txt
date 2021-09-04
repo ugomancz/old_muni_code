@@ -1,0 +1,3 @@
+/mnt/c/git/pb071/hw01/cmake-build-wsl-debug/CMakeFiles/edit_cache.dir
+/mnt/c/git/pb071/hw01/cmake-build-wsl-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/git/pb071/hw01/cmake-build-wsl-debug/CMakeFiles/ascii85.dir

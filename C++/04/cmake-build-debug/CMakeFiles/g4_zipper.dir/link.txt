@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/g4_zipper.dir/g4_zipper.cpp.o  -o g4_zipper.exe -Wl,--out-implib,libg4_zipper.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

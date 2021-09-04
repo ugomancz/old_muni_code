@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.17)
+project(04)
+
+set(CMAKE_CXX_STANDARD 17)
+add_compile_options(-Wall -Wextra -pedantic)
+add_executable(g1_format g1_format.cpp)
+add_executable(g2_least g2_least.cpp)
+add_executable(g3_area g3_area.cpp)
+add_executable(g4_zipper g4_zipper.cpp)
+add_executable(g5_rpn g5_rpn.cpp)
+add_executable(g6_eval g6_eval.cpp)

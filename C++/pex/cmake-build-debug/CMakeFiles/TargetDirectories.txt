@@ -1,0 +1,8 @@
+/mnt/c/git/pb161/pex/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/git/pb161/pex/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/git/pb161/pex/cmake-build-debug/CMakeFiles/2c_packed.dir
+/mnt/c/git/pb161/pex/cmake-build-debug/CMakeFiles/2b_parse.dir
+/mnt/c/git/pb161/pex/cmake-build-debug/CMakeFiles/2a_colours.dir
+/mnt/c/git/pb161/pex/cmake-build-debug/CMakeFiles/1c_shuffle.dir
+/mnt/c/git/pb161/pex/cmake-build-debug/CMakeFiles/1b_rpn.dir
+/mnt/c/git/pb161/pex/cmake-build-debug/CMakeFiles/1a_hamilton.dir

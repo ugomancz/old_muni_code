@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/g5_bbox.dir/g5_bbox.cpp.o -o g5_bbox 

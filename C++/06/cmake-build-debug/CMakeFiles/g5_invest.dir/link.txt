@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/g5_invest.dir/g5_invest.cpp.o  -o g5_invest.exe -Wl,--out-implib,libg5_invest.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

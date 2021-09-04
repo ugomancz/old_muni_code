@@ -1,0 +1,16 @@
+# P. Practice Exams
+
+This directory contains 2 practice exams, which you can submit
+freely. When you do this for real, you will have 3.5 hours to read
+the spec, implement it and submit the solution. Since the tasks are
+expected to take you about 2 hours or less, the submission deadline
+will be «strict» and will not be extended.
+
+The «practice» exam can be submitted at any time, and will be
+evaluated immediately after submission. Unlike the real exam, it
+will be evaluated every time you submit (a real exam will only be
+evaluated once, using the last submission before the deadline).
+
+To submit a practice exam, use
+
+    $ pb161 submit pex1

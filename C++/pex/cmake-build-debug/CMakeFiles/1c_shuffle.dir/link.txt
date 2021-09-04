@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/1c_shuffle.dir/1c_shuffle.cpp.o -o 1c_shuffle 

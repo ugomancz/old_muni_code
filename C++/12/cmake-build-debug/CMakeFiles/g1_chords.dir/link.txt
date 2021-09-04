@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/g1_chords.dir/g1_chords.cpp.o -o g1_chords 

@@ -1,0 +1,5 @@
+/mnt/c/git/pb161/t1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/git/pb161/t1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/git/pb161/t1/cmake-build-debug/CMakeFiles/magic.dir
+/mnt/c/git/pb161/t1/cmake-build-debug/CMakeFiles/reversi.dir
+/mnt/c/git/pb161/t1/cmake-build-debug/CMakeFiles/cellular.dir

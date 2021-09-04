@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g -Wl,--enable-auto-import CMakeFiles/g6_geometry.dir/g6_geometry.cpp.o -o g6_geometry.exe -Wl,--out-implib,libg6_geometry.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

@@ -1,0 +1,8 @@
+/cygdrive/c/git/pb161/10/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/cygdrive/c/git/pb161/10/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cygdrive/c/git/pb161/10/cmake-build-debug/CMakeFiles/g6_tree.dir
+/cygdrive/c/git/pb161/10/cmake-build-debug/CMakeFiles/g4_collect.dir
+/cygdrive/c/git/pb161/10/cmake-build-debug/CMakeFiles/g3_map.dir
+/cygdrive/c/git/pb161/10/cmake-build-debug/CMakeFiles/g2_cons.dir
+/cygdrive/c/git/pb161/10/cmake-build-debug/CMakeFiles/g5_list.dir
+/cygdrive/c/git/pb161/10/cmake-build-debug/CMakeFiles/g1_post.dir

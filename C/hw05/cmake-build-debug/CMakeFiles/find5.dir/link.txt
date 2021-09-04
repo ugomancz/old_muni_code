@@ -1,0 +1,1 @@
+/usr/bin/cc  -pedantic -Wall -Wextra -Werror -D_GNU_SOURCE -D_POSIX_C_SOURCE=200809L -g   CMakeFiles/find5.dir/find5.c.o  -o find5 

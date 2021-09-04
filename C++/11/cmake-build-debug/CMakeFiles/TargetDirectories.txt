@@ -1,0 +1,8 @@
+/mnt/c/git/pb161/11/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/git/pb161/11/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/git/pb161/11/cmake-build-debug/CMakeFiles/g6_scan.dir
+/mnt/c/git/pb161/11/cmake-build-debug/CMakeFiles/g5_tree.dir
+/mnt/c/git/pb161/11/cmake-build-debug/CMakeFiles/g4_nibble.dir
+/mnt/c/git/pb161/11/cmake-build-debug/CMakeFiles/g3_zip.dir
+/mnt/c/git/pb161/11/cmake-build-debug/CMakeFiles/g2_filter.dir
+/mnt/c/git/pb161/11/cmake-build-debug/CMakeFiles/g1_seq.dir

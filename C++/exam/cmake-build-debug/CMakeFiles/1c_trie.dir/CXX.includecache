@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/git/pb161/exam/1c_trie.cpp
+memory
+-
+string
+-
+utility
+-
+vector
+-
+algorithm
+-
+cassert
+-
+string
+-
+

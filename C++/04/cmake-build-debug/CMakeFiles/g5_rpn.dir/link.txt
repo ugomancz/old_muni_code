@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/g5_rpn.dir/g5_rpn.cpp.o  -o g5_rpn.exe -Wl,--out-implib,libg5_rpn.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

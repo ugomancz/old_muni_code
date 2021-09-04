@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/git/pb161/t2/natural.cpp
+algorithm
+-
+stdexcept
+-
+natural.hpp
+/mnt/c/git/pb161/t2/natural.hpp
+chrono
+-
+iostream
+-
+
+/mnt/c/git/pb161/t2/natural.hpp
+vector
+-
+cstdint
+-
+

@@ -1,0 +1,86 @@
+# Strings and Classes
+
+Welcome to PB161. If you haven't read the rules and guidelines in
+Part A (directory ‹00› in the source bundle), please do so now,
+before going on.
+
+The exercises today will look at some of the basics that you have
+seen in the lecture: strings, dynamic arrays – ‹std::vector›,
+classes with methods and ‹const› references. These concepts are
+further explored in the ‘demonstrations’ (commented examples; please
+note that these do not replace the lectures, but are rather
+complementary to it). The corresponding files in the source bundle
+are named ‹d?_*.cpp›, i.e. ‹d1_fibonacci.cpp› through ‹d4_???.cpp›.
+
+ 1. ‹fibonacci› – using ‹std::vector› (dynamic array)
+ 2. ‹hamming›   – introduction to ‹std::string›
+ 3. ‹hero›      – introduction to object composition
+ 4. ‹lemmings›  – collections of custom objects
+
+The second part of the study materials for each week gives you a
+couple of ‘elementary’ exercises, which you should be able to
+quickly solve to make sure you understand the concepts from the
+lecture and from the commented examples above. Sample solutions are
+in Part S at the end of the PDF, or in the directory ‹sol› in the
+source code bundle. Please note that the sample solution is not
+always the simplest possible – it's fine to take a more roundabout
+approach. The source files for this section are named ‹e?_*.cpp›.
+
+This week, the elementary exercises are:
+
+ 1. ‹predicates› – properties of lists of numbers
+ 2. ‹palindrome› – checking that an ‹std::string› is a palindrome
+ 3. ‹pascal›     – fill in an ‹std::vector›
+
+The next section has more difficult exercises, suitable to practice
+programming with the concepts that you have learned this week.
+Solutions to these can be freely discussed and shared, you can work
+on the exercises with your friends, and you can compare your
+solution to the one included in Part S. The files are named
+‹f?_*.cpp›.
+
+ 1. ‹wrap›    – wrap long lines into paragraphs of a given width
+ 2. ‹digits›  – representing numbers in a positional system
+ 3. ‹sieve›   – find prime numbers
+ 4. ‹bsearch› – binary search in a sorted ‹std::vector›
+
+The last section are ‘graded’ exercises, in the sense that you will
+have to solve and submit 9 of those in each block. The respective
+source files in the bundle are called ‹g?_*.cpp›. Discussing and
+sharing solutions is strictly forbidden – you must solve the
+exercises on your own. For details, see Part A (directory ‹00› in
+the source bundle).
+
+ 1. ‹counting› – count words and lines in a string
+ 2. ‹fraction› – evaluate a continued fraction
+ 3. ‹words›    – break a string into a vector of one-word strings
+ 4. ‹account›  – encapsulation of state, ‹const› methods
+ 5. ‹shapes›   – object composition
+ 6. ‹contacts› – collections of your own objects
+
+## a. Using the source bundle
+
+We recommend that you work on ‹aisa›, which has all the required
+tools installed and set up correctly. You can use ‹micro› as your
+editor if you are not familiar with ‹vim›, or you can use a remote
+editing feature in your code editor of choice. If you prefer to set
+up your own, local, environment, you are of course free to do that,
+but please keep in mind that your tools are your responsibility.
+
+If you work on ‹aisa›, you can check your solutions against the test
+cases provided with the exercises by running ‹make check›:
+
+    $ make check
+    e1_predicates    ok
+    e2_palindrome    ok
+    e3_pascal        ok
+    f1_wrap          ok
+    f2_digits        fail
+      assertion "digits( 1337, 10 ) == d10_1337" failed […]
+    f3_sieve         no build
+    f4_bsearch       no build
+    g1_counting      ok
+    g3_words         no build
+    g4_account       no build
+    g5_shapes        no build
+    g6_contacts      no build

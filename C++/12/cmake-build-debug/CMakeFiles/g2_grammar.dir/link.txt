@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/g2_grammar.dir/g2_grammar.cpp.o -o g2_grammar 

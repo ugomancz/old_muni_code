@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/g4_sparse.dir/g4_sparse.cpp.o -o g4_sparse 

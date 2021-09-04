@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/git/pb161/t2/machine.cpp
+cassert
+-
+iostream
+-
+machine.hpp
+/mnt/c/git/pb161/t2/machine.hpp
+
+/mnt/c/git/pb161/t2/machine.hpp
+cstdint
+-
+unordered_map
+-
+vector
+-
+

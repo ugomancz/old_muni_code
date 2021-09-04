@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/g6_fixnum.dir/g6_fixnum.cpp.o -o g6_fixnum 

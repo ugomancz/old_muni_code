@@ -1,0 +1,8 @@
+/cygdrive/c/git/pb161/06/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cygdrive/c/git/pb161/06/cmake-build-debug/CMakeFiles/g6_linear.dir
+/cygdrive/c/git/pb161/06/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/cygdrive/c/git/pb161/06/cmake-build-debug/CMakeFiles/g3_library.dir
+/cygdrive/c/git/pb161/06/cmake-build-debug/CMakeFiles/g2_loan.dir
+/cygdrive/c/git/pb161/06/cmake-build-debug/CMakeFiles/g5_invest.dir
+/cygdrive/c/git/pb161/06/cmake-build-debug/CMakeFiles/g4_parse.dir
+/cygdrive/c/git/pb161/06/cmake-build-debug/CMakeFiles/g1_fd.dir

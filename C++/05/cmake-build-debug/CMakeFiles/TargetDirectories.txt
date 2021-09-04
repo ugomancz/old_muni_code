@@ -1,0 +1,8 @@
+/mnt/c/git/pb161/05/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/git/pb161/05/cmake-build-debug/CMakeFiles/g6_fixnum.dir
+/mnt/c/git/pb161/05/cmake-build-debug/CMakeFiles/g5_grep.dir
+/mnt/c/git/pb161/05/cmake-build-debug/CMakeFiles/g4_nibble.dir
+/mnt/c/git/pb161/05/cmake-build-debug/CMakeFiles/g3_tmpfile.dir
+/mnt/c/git/pb161/05/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/git/pb161/05/cmake-build-debug/CMakeFiles/g2_rational.dir
+/mnt/c/git/pb161/05/cmake-build-debug/CMakeFiles/g1_polar.dir

@@ -1,0 +1,65 @@
+## Plagiarism
+
+tl;dr: Please work alone and do not cheat. Cheating is a colossal
+waste of everyone's time. We would prefer to spend that time on
+improving the course for everyone. Thank you.
+
+And now for the long version, because sadly, the above is not
+enough. The goal of this subject is to teach you to write programs
+in C++ – from understanding the problem, through designing the
+solution and writing it down in C++. You must be able to do all of
+this «on your own». Teamwork has its place, but it's not in this
+subject.
+
+You must work out all «graded» exercises entirely on your own.
+Discussing the solution, even in abstract terms, is not permitted.
+If you do not understand something, ask your tutor «privately».  If
+you are caught cheating, ‘we have only shared ideas’ or even ‘we
+only discussed the problem statement’ will not hold as a valid
+defence. If you want to study together, that is fine, and encouraged
+– there are plenty of «ungraded» exercises for this purpose. You can
+discuss those, solve them together, share and compare your solutions
+and so on.
+
+Please note that you are also responsible for keeping your solutions
+private. If you only use the ‹pb161› command on ‹aisa›, it will make
+your ‹~/pb161› directory inaccessible to anyone else (this also
+applies to school-provided UNIX workstations). Keep it that way. If
+you work on your solution using other computers, make sure they are
+secure. Do not publish your solutions anywhere (on the internet or
+otherwise) and do not share them for any reason. All parties in a
+copying incident will be treated equally.
+
+### Penalties
+
+Please note that the penalties below are applied «twice»: first,
+they are subtracted in the block to which the affected exercise or
+task belongs, and this part of the penalty counts toward the
+requirement for passing the block. Additionally, when computing the
+final grade, your total penalty from the entire semester is
+subtracted «again».
+
+The individual penalties are as follows:
+
+ • copying a weekly exercise is penalized with 6 points,
+ • copying a task is penalized with twice the point value of that
+   task (e.g. 12 points for a 6-point task),
+ • cheating on an exam is counted as twice the point value of the
+   «entire exam», i.e. 60 points, but only once (since there is no
+   per-block penalty).
+
+Hence, if you earn a 9-point penalty for copying a weekly exercises,
+and in that block, you only have 12 points from weekly exercises,
+you will «fail the subject».  Same goes for programming tasks.
+
+Example 1: in week 2, you copy a single weekly exercise – a penalty
+of 6 points applies. In that block, you have 16 and you still pass
+the block. You stay out of trouble for the rest of the semester, and
+your total score before penalties is 123 points. On that total, you
+lose 12 points, for a result of 111 points, passing the subject with
+an E.
+
+Example 2: you cooperate on ‹t1_reversi› with another student. You
+have passed ‹t1_reversi› and ‹t1_cellular› in block 1, for a total
+of 15 points. The per-block penalty for cheating on ‹t1_reversi› is
+18 points – you fail the block and hence the subject, with grade X.

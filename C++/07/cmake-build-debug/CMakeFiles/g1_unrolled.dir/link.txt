@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g -Wl,--enable-auto-import CMakeFiles/g1_unrolled.dir/g1_unrolled.cpp.o -o g1_unrolled.exe -Wl,--out-implib,libg1_unrolled.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

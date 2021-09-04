@@ -1,0 +1,6 @@
+/mnt/c/git/pb161/t3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/git/pb161/t3/cmake-build-debug/CMakeFiles/lisp.dir
+/mnt/c/git/pb161/t3/cmake-build-debug/CMakeFiles/linalg.dir
+/mnt/c/git/pb161/t3/cmake-build-debug/CMakeFiles/bplus.dir
+/mnt/c/git/pb161/t3/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/git/pb161/t3/cmake-build-debug/CMakeFiles/tree.dir

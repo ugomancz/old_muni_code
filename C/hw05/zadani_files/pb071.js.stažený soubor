@@ -1,0 +1,115 @@
+class Utils {
+    static fixISphoto(e, uco) {
+        $(e).attr("src", "https://is.muni.cz/lide/foto?uco=" + uco);
+    }
+}
+
+class ADocAdmonitions {
+    constructor() {
+        this.blocktypes = {
+            note: {
+                icon: "fas fa-info-circle",
+            },
+            tip: {
+                icon: "fas fa-lightbulb",
+            },
+            important: {
+                icon: "fas fa-comment-alt",
+            },
+            warning: {
+                icon: "fas fa-exclamation-circle",
+            },
+            caution: {
+                icon: "fas fa-exclamation-triangle",
+            },
+        };
+    }
+
+    run_on(node) {
+        var jnode = $(node);
+
+        var icon = jnode.children('svg').data('icon');
+        var type = this.blocktypes[icon];
+
+        if (type == null)
+            return;
+
+        jnode.addClass(type['icon']);
+    }
+
+    observe(mutation) {
+        if ($(mutation.target).data('fa-i2svg') == undefined)
+            return;
+
+        this.run_on(mutation.target);
+    }
+
+    run(target) {
+        target.find(".admonitionblock")
+            .find("td.icon")
+                .find("i").each((_, elem) => {
+                    this.run_on(elem);
+                });
+    }
+}
+
+class ADocLists {
+    constructor() {
+    }
+
+    observe(mutation) {
+    }
+
+    run(target) {
+        target.find("div.ulist.list-group")
+            .children("ul")
+                .addClass("list-group list-group-sm")
+                .children("li")
+                    .addClass("list-group-item")
+                .end()
+            .end()
+            .filter("div.ulist.list-group-flush")
+            .children("ul")
+                .addClass("list-group-flush");
+    }
+}
+
+class AsciiDocHelper {
+    constructor() {
+        var observerConfig = {
+            childList: true,
+            subtree: true,
+        };
+
+        this.observer = new MutationObserver((mut) => {
+            mut.forEach(mutation => {
+                this.observe(mutation);
+            });
+        });
+
+        this.mutators = [
+            new ADocAdmonitions(),
+            new ADocLists(),
+        ];
+
+        this.observer.observe($(document).get(0), observerConfig);
+        this.run($(document));
+    }
+
+    observe(mutation) {
+        this.mutators.forEach(mutator => {
+            mutator.observe(mutation);
+        });
+    }
+
+    run(target) {
+        this.mutators.forEach(mutator => {
+            mutator.run(target);
+        });
+    }
+}
+
+var ADHelper;
+$(document).ready(() => {
+    ADHelper = new AsciiDocHelper();
+});

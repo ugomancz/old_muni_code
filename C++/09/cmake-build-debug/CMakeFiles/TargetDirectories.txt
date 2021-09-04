@@ -1,0 +1,8 @@
+/mnt/c/git/pb161/09/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/git/pb161/09/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/git/pb161/09/cmake-build-debug/CMakeFiles/g6_visit.dir
+/mnt/c/git/pb161/09/cmake-build-debug/CMakeFiles/g4_sparse.dir
+/mnt/c/git/pb161/09/cmake-build-debug/CMakeFiles/g3_stats.dir
+/mnt/c/git/pb161/09/cmake-build-debug/CMakeFiles/g2_buffer.dir
+/mnt/c/git/pb161/09/cmake-build-debug/CMakeFiles/g5_bbox.dir
+/mnt/c/git/pb161/09/cmake-build-debug/CMakeFiles/g1_circular.dir

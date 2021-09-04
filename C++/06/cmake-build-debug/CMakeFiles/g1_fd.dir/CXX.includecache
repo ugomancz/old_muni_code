@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/git/pb161/06/g1_fd.cpp
+fcntl.h
+-
+unistd.h
+-
+system_error
+-
+cassert
+-
+string
+-
+utility
+-
+iostream
+-
+

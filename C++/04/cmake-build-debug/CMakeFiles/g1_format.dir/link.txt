@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/g1_format.dir/g1_format.cpp.o  -o g1_format.exe -Wl,--out-implib,libg1_format.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

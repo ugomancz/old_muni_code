@@ -1,0 +1,196 @@
+## Grading Overview
+
+There are 5 ways to obtain points:
+
+ 1. 72 weekly exercises (each exercise is worth 1 point),
+ 2. 12 programming tasks, each worth 6-12 points,
+ 3. code quality: at most the same number of points as the task
+    itself, applicable to at most 4 tasks of your choice,
+ 4. peer review: at most 20 points for writing reviews of task
+    solutions of other students,
+ 5. exam: 3 programming exercises, worth 8, 10 and 12 points.
+
+In each block, you need:
+
+ • weekly exercises: 9 out of 24 points,
+ • task sets:        9 out of 30/36/42 points.
+
+For the semester as a whole:
+
+ • code quality:     10 out of 45,
+ • weekly exercises: 27 out of 72,
+ • task sets:        36 out of 108,
+ • exam:             15 out of 30 (if applicable).
+
+You must meet the above minimal requirements (with the exception of
+the exam, of course) by the «8th of June»; otherwise, you will be
+graded X. The exam is only relevant if your ending type is ‘zk’
+(exam). Your grade is then based on the total points you have
+collected:
+
+ • ≥ 180 points → A.
+ • ≥ 160 points → B,
+ • ≥ 140 points → C,
+ • ≥ 120 points → D,
+ • ≥ 100 points → E,
+ • ≥  80 points → Z (if your ending type is ‘z’).
+
+### Weekly Exercises
+
+The weekly exercises are to be worked out in the corresponding week
+of the semester, with a deadline every Saturday at midnight. In
+addition to gaining points, you will get feedback each week on one
+of the exercises that you have submitted by the deadline, on the
+following Monday evening/night. The relevant dates are as follows:
+
+ │ block │ week │ deadline │ feedback │
+ ├◅─────▻│◅────▻│◅────────▻│◅────────▻│
+ │    1  │  01  │    6.3.  │    8.3.  │
+ │       │  02  │   13.3   │   15.3.  │
+ │       │  03  │   20.3.  │   22.3.  │
+ │       │  04  │   27.3.  │   29.3.  │
+ │┄┄┄┄┄┄┄│┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄┄│
+ │    2  │  05  │    3.4.  │    5.4.  │
+ │       │  06  │   10.4.  │   12.4.  │
+ │       │  07  │   17.4.  │   19.4.  │
+ │       │  08  │   24.4.  │   26.4.  │
+ │┄┄┄┄┄┄┄│┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄┄│┄┄┄┄┄┄┄┄┄┄│
+ │    3  │  09  │    1.5.  │    3.5.  │
+ │       │  10  │    8.5.  │   10.5.  │
+ │       │  11  │   15.5.  │   17.5.  │
+ │       │  12  │   22.5.  │   24.5.  │
+
+Only the enclosed tests are executed upon submission, and the result
+should appear in the corresponding notepad within 5-10 minutes.
+
+### Programming Tasks
+
+In each block, there are 4 tasks of increasing difficulty (both
+within and between blocks), with the following point values:
+
+ │         │ task 1 │ task 2 │ task 3 │ task 4 │
+ ├┄┄┄┄┄┄┄┄┄│◅┄┄┄┄┄┄▻│◅┄┄┄┄┄┄▻│◅┄┄┄┄┄┄▻│◅┄┄┄┄┄┄▻│
+ │ block 1 │    6   │    6   │    9   │    9   │
+ │ block 2 │    6   │    9   │    9   │   12   │
+ │ block 3 │    9   │    9   │   12   │   12   │
+
+There will be 8 deadlines for each «block», spread out over 4 weeks
+(i.e. there's a deadline twice a week: on Monday and on Thursday at
+midnight). Each deadline gives you one chance to pass the automated
+test suite. It does not matter when you pass any given task, but the
+test suite is strictly binary: you either pass or you fail. More
+details and guidelines are in ‹3_tasks.txt›.
+
+Verity tests continue to run after the last deadline: you can finish
+tasks and still get results after they expire, though you will not
+get any points for doing so. However, you can still ask for (and
+get) reviews for such tasks, including a graded one from your tutor.
+
+The deadline schedule is as follows:
+
+│     │    week 1    │    week 2    │    week 3    │    week 4    │
+├┄┄┄┄┄│┄┄┄┄┄▻┼┄┄┄┄┄┄▻│┄┄┄┄┄▻┼┄┄┄┄┄┄▻│┄┄┄┄┄▻┼┄┄┄┄┄┄▻│┄┄┄┄┄▻┼┄┄┄┄┄┄▻│
+│ T.1 │ 18.3.│ 22.3. │ 25.3.│ 29.3. │  1.4.│  5.4. │  8.4.│ 12.4. │
+│ T.2 │ 15.4.│ 19.4. │ 22.4.│ 26.4. │ 29.4.│  3.5. │  6.5.│ 10.5. │
+│ T.3 │ 13.5.│ 17.5. │ 20.5.│ 24.5. │ 27.5.│ 31.5. │  3.6.│  7.6. │
+
+### Code Quality
+
+We should all strive to always write clean, readable and
+well-designed code. Of course, this takes more time (often a lot
+more time) than just going with the first thing that sort of works.
+
+You will be able to submit «four» of your task solutions for teacher
+review. Which assignments you choose to submit is up to you. Make
+sure that you put in adequate effort to make the code as clean and
+nice as you possibly can. The code must pass verity tests, but it
+does not matter when (i.e. you don't need to meet a particular
+deadline).
+
+With each review, you get a grade which corresponds to a fraction of
+the points assigned to the given task. The possible grades are:
+
+ • A = 100 % (i.e. 6 points for a 6-point task),
+ • B =  75 %
+ • C =  50 %
+ • D =  25 %
+ • E =   0 %
+
+The detailed criteria for individual grades (and for code quality in
+general) are provided in ‹5_quality.txt›. The review cycle is
+aligned with the weekly exercises: every week, you have until
+Saturday evening to submit a review request. Your tutor then has 9
+days to write the review, i.e. you should get it by Monday, together
+with your weekly feedback. It is «your responsibility» to submit
+review requests in time. If your grade is not A, your tutor will
+point out what you need to improve to get a better grade.
+
+You then get 1 chance to improve your code and submit the task for a
+second round of review. If your code has sufficiently improved, you
+can get an accordingly improved grade (up to 2 levels – if your
+initial grade is E, your best possible outcome is a C in the second
+round). The dates are as follows:
+
+│ request │ grade │ request │ grade │ request │ grade │
+├┄┄┄┄┄┄┄┄▻┼┄┄┄┄┄┄▻│┄┄┄┄┄┄┄┄▻┼┄┄┄┄┄┄▻│┄┄┄┄┄┄┄┄▻┼┄┄┄┄┄┄▻│
+│   20.3. │ 29.3. │   27.3. │  5.4. │    3.4. │ 12.4. │
+│   10.4. │ 19.4. │   17.4. │ 26.4. │   24.4. │  3.5. │
+│    1.5. │ 10.5. │    8.5. │ 17.5. │   15.5. │ 24.5. │
+│   22.5. │ 31.5. │  «29.5.»│ «7.6.»│    5.6. │ 14.6. │
+
+«29th of May» is your last chance to submit code for review to
+satisfy the requirement of 10 points for code quality. You can still
+submit code for review by 5th of June to improve your final grade.
+
+### Peer Review
+
+Reading code is an important skill -- sometimes more so than writing
+it. While the space to practice reading code in this subject is
+limited, you will be able to earn a few points doing just that. The
+rules for peer review are quite different from those for teacher
+reviews above:
+
+ • you can submit any code (even completely broken) for peer review,
+ • to write a review for any given submission, you must have already
+   passed the respective assignment yourself,
+ • there are no specific deadlines for requesting or providing peer
+   reviews,
+ • writing a review is worth 1/6 the points assigned to the task
+   (i.e. 1 point for a 6-point task, 1.5 points for a 9-point task
+   and 2 points for a 12-point task).
+
+It is okay to point out correctness problems during peer reviews,
+with the expectation that this might help the recipient pass the
+assignment. This is the «only» allowed form of cooperation (more on
+that below).
+
+### Examples
+
+A lot more work is available that what you need to do, even for
+an A. We do not expect you to solve all the exercises nor tasks –
+pick a subset you like, but be sure to spread the work through the
+entire semester – remember that you need to pass the minimum in each
+block. There are many different ways to achieve a passing grade,
+here are some examples what you can to do to pass:
+
+ • Example 1, passing with an E, balanced:
+   ◦ you do «35 weekly exercises» (minimum + 8 extra),
+   ◦ «5 tasks»: 6 + 9, then 9 and 9 + 9, for 42 points total,
+   ◦ teacher review: grades «B, C, D, C» for a total of 13 points,
+   ◦ 18 points on the exam,
+   ◦ your «total is 108», passing comfortably with an «E»,
+   ◦ adding 8 peer reviews can get you a «D».
+ • Example 2, passing with a D, focus on weekly exercises:
+   ◦ «60 weekly exercises» (5 each week),
+   ◦ «four tasks», 9 point each for 36 points,
+   ◦ teacher reviews: «C, C, D, D», for 14 points total,
+   ◦ 18 points on the exam,
+   ◦ your «total is 128», your final grade is «D»,
+   ◦ 9 peer reviews can improve your grade to a «C».
+ • Example 3, aiming for a B:
+   ◦ «45 weekly exercises» (4 most weeks, sometimes 3),
+   ◦ «6 tasks»: 6 + 9, 9 + 12 and 9 + 12 again, netting 48 points,
+   ◦ teacher reviews (2×9 + 2×12): «B, C, B, A» for 32 points,
+   ◦ 22 points on the «exam»,
+   ◦ peer reviews: 4× 12-point and 6× 9-point, netting 17 points,
+   ◦ your «total is 164» for a final grade «B».

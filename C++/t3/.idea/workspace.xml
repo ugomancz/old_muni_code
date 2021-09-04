@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="t3" targetName="linalg" />
+      <config projectName="t3" targetName="bplus" />
+      <config projectName="t3" targetName="tree" />
+      <config projectName="t3" targetName="lisp" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="65c07c47-f079-47ff-a1fe-4f5127f89f6d" name="Default Changelist" comment="Iterator increment implemented">
+      <change beforePath="$PROJECT_DIR$/../exam/1a_tree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../exam/1a_tree.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exam/1b_expr.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../exam/1b_expr.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exam/1c_trie.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../exam/1c_trie.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1sXNcaQ7gmuf1R72BjygQnL1Hkc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="cmake.loaded.for.project" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager" selected="Python.postorder">
+    <configuration name="bplus" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="t3" TARGET_NAME="bplus" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="t3" RUN_TARGET_NAME="bplus">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="linalg" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="t3" TARGET_NAME="linalg" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="t3" RUN_TARGET_NAME="linalg">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="lisp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="t3" TARGET_NAME="lisp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="t3" RUN_TARGET_NAME="lisp">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tree" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="t3" TARGET_NAME="tree" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="t3" RUN_TARGET_NAME="tree">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="postorder" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="t3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/postorder.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.postorder" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.postorder" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="65c07c47-f079-47ff-a1fe-4f5127f89f6d" name="Default Changelist" comment="" />
+      <created>1621015055041</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621015055041</updated>
+      <workItem from="1621015062238" duration="10002000" />
+      <workItem from="1621090070520" duration="18691000" />
+      <workItem from="1621167980127" duration="3462000" />
+      <workItem from="1621501613351" duration="606000" />
+      <workItem from="1621526407352" duration="2688000" />
+      <workItem from="1621583704684" duration="103000" />
+    </task>
+    <task id="LOCAL-00001" summary="Class tree implemented">
+      <created>1621032211228</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1621032211228</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Iterator implemented">
+      <created>1621107054251</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1621107054251</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Equality operators for iterators implemented">
+      <created>1621107811750</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1621107811751</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Rule of three implemented for node_ref">
+      <created>1621108577071</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1621108577071</updated>
+    </task>
+    <task id="LOCAL-00005" summary="ForwardIterator methods added">
+      <created>1621114535026</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1621114535026</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Syntax test passes">
+      <created>1621115807011</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1621115807011</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Iterator increment implemented">
+      <created>1621170711076</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1621170711076</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Iterator increment implemented">
+      <created>1621171357280</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1621171357280</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Iterator increment implemented">
+      <created>1621171458996</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1621171458996</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Class tree implemented" />
+    <MESSAGE value="Iterator implemented" />
+    <MESSAGE value="Equality operators for iterators implemented" />
+    <MESSAGE value="Rule of three implemented for node_ref" />
+    <MESSAGE value="ForwardIterator methods added" />
+    <MESSAGE value="Syntax test passes" />
+    <MESSAGE value="Iterator increment implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Iterator increment implemented" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="last.node-&gt;value" />
+        <watch expression="stack.back().node-&gt;value" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

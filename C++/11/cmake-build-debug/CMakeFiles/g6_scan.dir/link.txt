@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/g6_scan.dir/g6_scan.cpp.o -o g6_scan 

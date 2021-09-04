@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g -Wl,--enable-auto-import CMakeFiles/g4_network.dir/g4_network.cpp.o -o g4_network.exe -Wl,--out-implib,libg4_network.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

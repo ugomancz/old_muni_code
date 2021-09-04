@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/g1_seq.dir/g1_seq.cpp.o -o g1_seq 

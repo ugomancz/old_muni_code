@@ -1,0 +1,8 @@
+/cygdrive/c/git/pb161/08/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/cygdrive/c/git/pb161/08/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cygdrive/c/git/pb161/08/cmake-build-debug/CMakeFiles/g6_geometry.dir
+/cygdrive/c/git/pb161/08/cmake-build-debug/CMakeFiles/g5_filter.dir
+/cygdrive/c/git/pb161/08/cmake-build-debug/CMakeFiles/g4_network.dir
+/cygdrive/c/git/pb161/08/cmake-build-debug/CMakeFiles/g3_sexpr.dir
+/cygdrive/c/git/pb161/08/cmake-build-debug/CMakeFiles/g2_bexpr.dir
+/cygdrive/c/git/pb161/08/cmake-build-debug/CMakeFiles/g1_prisoner.dir

@@ -1,0 +1,46 @@
+## Exam
+
+The raison d'être of this course is to teach you to write correct
+C++ programs on your own – and the programming test is designed to
+ensure that this was indeed the outcome for you personally. Of
+course, we recognize that there is additional pressure when you are
+programming for an exam. You will get plenty of time to solve the
+exercises (in relation to their difficulty).
+
+During the exam, it'll be possible to submit the solutions and get
+back results of a ‘sanity’ test. The ‘sanity’ assertions will also
+be included with the exam source files, for your convenience. There
+is no requirement to pass ‹clang-tidy›.
+
+The exam will take place on 9th of June starting at 12:30 and will
+extend until 16:00. Additional attempts will be possible on 16th and
+30th of June.
+
+You will also get a chance for a ‘rehearsal’: there are¹ two
+practice exams in an appendix of this document (directory ‹pex›).
+You will be able to work them out and submit them for evaluation, as
+if they were a real exam. This is strictly optional and will not be
+graded in any way. It is up to you to work the tests out within a
+reasonable time limit (e.g. 2/3 of the official time limit for the
+real exam) and on your own.
+
+You can submit multiple times for the practice tests and get
+‘verity’ test results immediately, but please keep in mind that this
+will «not» be possible at the actual exam – you will have to get it
+right the first time around.
+
+### Evaluation
+
+The programming test will be evaluated using automated tests, just
+like the 12 ‘major’ tasks. Each exercise is evaluated in a binary
+fashion: you «must» pass all tests in order to succeed on the given
+task, in which case you are awarded its points.
+
+If you fail to obtain 15 points (i.e. pass 2 out of the 3
+exercises), you get an F and you can try again according to the
+standard rules for repeating exams.
+
+¹ Or rather, will be added, by the end of the second block at the
+  latest. Unfortunately, we did not manage to prepare them before
+  the start of the semester as we have originally hoped.
+

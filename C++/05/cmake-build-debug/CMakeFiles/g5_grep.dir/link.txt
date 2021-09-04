@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/g5_grep.dir/g5_grep.cpp.o -o g5_grep 

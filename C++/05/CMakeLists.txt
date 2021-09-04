@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.17)
+project(05)
+
+set(CMAKE_CXX_STANDARD 17)
+add_compile_options(-Wall -Wextra -pedantic)
+add_executable(g1_polar g1_polar.cpp)
+add_executable(g2_rational g2_rational.cpp)
+add_executable(g3_tmpfile g3_tmpfile.cpp)
+add_executable(g4_nibble g4_nibble.cpp)
+add_executable(g5_grep g5_grep.cpp)
+add_executable(g6_fixnum g6_fixnum.cpp)

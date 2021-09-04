@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/git/pb161/exam/1b_expr.cpp
+string_view
+-
+map
+-
+cassert
+-
+stdexcept
+-
+utility
+-
+vector
+-
+variant
+-
+

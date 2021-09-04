@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/1a_hamilton.dir/1a_hamilton.cpp.o -o 1a_hamilton 

@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/g2_buffer.dir/g2_buffer.cpp.o -o g2_buffer 

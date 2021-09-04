@@ -1,0 +1,1 @@
+/usr/bin/c++  -O0 -g CMakeFiles/natural.dir/natural.cpp.o -o natural 

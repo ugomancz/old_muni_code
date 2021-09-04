@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/g2_rational.dir/g2_rational.cpp.o -o g2_rational 

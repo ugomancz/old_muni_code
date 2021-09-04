@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/git/pb071/hw05/find5.c
+find5.h
+/mnt/c/git/pb071/hw05/find5.h
+dirent.h
+-
+errno.h
+-
+ftw.h
+-
+getopt.h
+-
+limits.h
+-
+pwd.h
+-
+stdbool.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
+/mnt/c/git/pb071/hw05/find5.h
+

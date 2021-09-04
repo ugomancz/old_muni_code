@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/g3_area.dir/g3_area.cpp.o  -o g3_area.exe -Wl,--out-implib,libg3_area.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

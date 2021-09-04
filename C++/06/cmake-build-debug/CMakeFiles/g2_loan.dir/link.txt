@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/g2_loan.dir/g2_loan.cpp.o  -o g2_loan.exe -Wl,--out-implib,libg2_loan.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

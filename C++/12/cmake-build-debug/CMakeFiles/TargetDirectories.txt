@@ -1,0 +1,8 @@
+/mnt/c/git/pb161/12/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/git/pb161/12/cmake-build-debug/CMakeFiles/g6_map.dir
+/mnt/c/git/pb161/12/cmake-build-debug/CMakeFiles/g5_queens.dir
+/mnt/c/git/pb161/12/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/git/pb161/12/cmake-build-debug/CMakeFiles/g4_poly.dir
+/mnt/c/git/pb161/12/cmake-build-debug/CMakeFiles/g3_linear.dir
+/mnt/c/git/pb161/12/cmake-build-debug/CMakeFiles/g2_grammar.dir
+/mnt/c/git/pb161/12/cmake-build-debug/CMakeFiles/g1_chords.dir

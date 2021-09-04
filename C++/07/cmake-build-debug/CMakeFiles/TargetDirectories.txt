@@ -1,0 +1,8 @@
+/cygdrive/c/git/pb161/07/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/cygdrive/c/git/pb161/07/cmake-build-debug/CMakeFiles/g6_rope.dir
+/cygdrive/c/git/pb161/07/cmake-build-debug/CMakeFiles/g5_bdd.dir
+/cygdrive/c/git/pb161/07/cmake-build-debug/CMakeFiles/g4_chartrie.dir
+/cygdrive/c/git/pb161/07/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cygdrive/c/git/pb161/07/cmake-build-debug/CMakeFiles/g2_bittrie.dir
+/cygdrive/c/git/pb161/07/cmake-build-debug/CMakeFiles/g3_solid.dir
+/cygdrive/c/git/pb161/07/cmake-build-debug/CMakeFiles/g1_unrolled.dir

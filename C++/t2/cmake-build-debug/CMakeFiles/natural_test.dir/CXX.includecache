@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/git/pb161/t2/natural.cpp
+algorithm
+-
+stdexcept
+-
+natural.hpp
+/mnt/c/git/pb161/t2/natural.hpp
+chrono
+-
+iostream
+-
+
+/mnt/c/git/pb161/t2/natural.hpp
+vector
+-
+cstdint
+-
+
+/mnt/c/git/pb161/t2/natural_test.cpp
+natural.hpp
+/mnt/c/git/pb161/t2/natural.hpp
+natural.cpp
+/mnt/c/git/pb161/t2/natural.cpp
+iostream
+-
+chrono
+-
+cmath
+-
+

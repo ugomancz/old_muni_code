@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/reversi.dir/reversi.cpp.o -o reversi 

@@ -1,0 +1,5 @@
+/mnt/c/git/pb161/exam/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/git/pb161/exam/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/git/pb161/exam/cmake-build-debug/CMakeFiles/1c_trie.dir
+/mnt/c/git/pb161/exam/cmake-build-debug/CMakeFiles/1b_expr.dir
+/mnt/c/git/pb161/exam/cmake-build-debug/CMakeFiles/1a_tree.dir

@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/g5_tree.dir/g5_tree.cpp.o -o g5_tree 
