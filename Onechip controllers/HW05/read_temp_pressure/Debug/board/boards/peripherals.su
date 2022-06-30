@@ -1,0 +1,3 @@
+peripherals.c:97:13:DSPI_init	8	static
+peripherals.c:105:6:BOARD_InitPeripherals	8	static
+peripherals.c:114:6:BOARD_InitBootPeripherals	8	static

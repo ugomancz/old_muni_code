@@ -1,0 +1,16 @@
+fsl_clock.h:725:20:CLOCK_EnableClock	24	static
+fsl_port.h:243:20:PORT_SetPinConfig	32	static
+fsl_port.h:346:20:PORT_SetPinMux	24	static
+fsl_port.h:361:20:PORT_EnablePinsDigitalFilter	24	static
+fsl_port.h:416:20:PORT_SetPinInterruptConfig	24	static
+pin_mux.c:179:6:BOARD_InitBootPins	8	static
+pin_mux.c:203:6:BOARD_InitPins	8	static
+pin_mux.c:243:6:BOARD_InitBUTTONsPins	16	static
+pin_mux.c:315:6:BOARD_InitLEDsPins	32	static
+pin_mux.c:421:6:BOARD_InitACCEL_I2CPins	32	static
+pin_mux.c:545:6:BOARD_InitGYRO_I2CPins	32	static
+pin_mux.c:665:6:BOARD_InitDEBUG_UARTPins	16	static
+pin_mux.c:742:6:BOARD_InitSDHC0Pins	40	static
+pin_mux.c:922:6:BOARD_InitENETPins	48	static
+pin_mux.c:1130:6:BOARD_InitUSBPins	16	static
+pin_mux.c:1175:6:BOARD_InitOSCsPins	8	static

@@ -1,0 +1,8 @@
+fsl_enet.h:944:20:ENET_ActiveRead	16	static
+enet_ethernetif_kinetis.c:220:6:ethernetif_enet_init	96	static
+enet_ethernetif_kinetis.c:295:13:ethernetif_enet_ptr	16	static
+enet_ethernetif_kinetis.c:304:23:enet_get_tx_buffer	16	static
+enet_ethernetif_kinetis.c:313:14:enet_send_frame	32	static
+enet_ethernetif_kinetis.c:349:14:ethernetif_linkinput	1560	static
+enet_ethernetif_kinetis.c:454:7:ethernetif_linkoutput	40	static
+enet_ethernetif_kinetis.c:541:7:ethernetif0_init	16	static

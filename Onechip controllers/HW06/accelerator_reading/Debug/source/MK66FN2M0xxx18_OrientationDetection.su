@@ -1,0 +1,4 @@
+MK66FN2M0xxx18_OrientationDetection.c:54:6:PORTC_IRQHandler	8	static
+MK66FN2M0xxx18_OrientationDetection.c:61:10:initializeAccel	40	static
+MK66FN2M0xxx18_OrientationDetection.c:93:10:setupOrientationDetection	32	static
+MK66FN2M0xxx18_OrientationDetection.c:121:5:main	24	static

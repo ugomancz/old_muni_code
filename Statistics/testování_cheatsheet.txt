@@ -1,0 +1,24 @@
+známe rozptyl, hledáme střední hodnotu -> teaching demos z.test(x,mu=872,sd=2.1) # sd je smerodatna odchylka (sigma ne nadruhou) a mu je stredni hodnota z H_0
+neznáme rozptyl, hledáme střední hodnotu -> t.test(x,mu=8.8) # mu je střední hodnota z H_0
+hledáme rozptyl -> sigma.test(x,sigmasq=0.1) # sigmasq je hodnota z H_0
+
+dvě hodnoty, x a y nezávislé:
+
+rovnají se dva rozptyly?
+H_0: rozptyly se rovnají
+var.test(x,y) # p-value > 0.05, nezamítáme
+
+rovnají se dvě střední hodnoty?
+H_0: střední hodnoty se rovnají
+t.test(x,y,#var.equal=T) # var.equal pokud se rovnají rozptyly a máme to otestované; p-value > 0.05 -> hypotéza platí
+
+dvě hodnoty, x a y závislé:
+
+rovnají se střední hodnoty?
+H_0: střední hodnoty se rovnají (mu1 - mu2 == 0)
+t.test(x,y,paired=T) # paired značí závislost x a y, p-value > 0.05 -> hypotézu nezamítáme
+
+
+odhad střední hodnoty pro binomické rozdělení (hlasy pro starostu):
+H_0: střední hodnota bude xyz
+binom.test(počet úspěchů, počet pokusů, střední hodnota podle H_0) # p-value > 0.05 -> H_0 nezamítáme

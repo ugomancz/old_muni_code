@@ -1,0 +1,13 @@
+core_cm4.h:1677:22:__NVIC_EnableIRQ	16	static
+core_cm4.h:1805:22:__NVIC_SetPriority	16	static
+fsl_common.h:419:28:EnableIRQ	16	static
+fsl_dac.h:187:20:DAC_Enable	16	static
+fsl_rtc.h:361:20:RTC_StartTimer	16	static
+fsl_rtc.h:373:20:RTC_StopTimer	16	static
+fsl_adc16.h:363:20:ADC16_EnableHardwareTrigger	16	static
+peripherals.c:67:13:DAC_1_init	8	static
+peripherals.c:149:13:RTC_1_init	8	static
+peripherals.c:236:13:ADC0_init	8	static
+peripherals.c:319:13:ADC1_init	8	static
+peripherals.c:335:6:BOARD_InitPeripherals	8	static
+peripherals.c:347:6:BOARD_InitBootPeripherals	8	static

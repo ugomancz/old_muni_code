@@ -1,0 +1,2 @@
+accel.c:7:10:startInitialization	24	static
+accel.c:55:10:finishInitialization	24	static

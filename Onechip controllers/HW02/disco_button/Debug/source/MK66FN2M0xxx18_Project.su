@@ -1,0 +1,5 @@
+fsl_gpio.h:182:20:GPIO_PortSet	16	static
+fsl_gpio.h:193:20:GPIO_PortClear	16	static
+fsl_gpio.h:223:24:GPIO_PinRead	16	static
+MK66FN2M0xxx18_Project.c:52:5:main	24	static
+MK66FN2M0xxx18_Project.c:88:6:toggleRGB	16	static

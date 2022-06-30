@@ -1,0 +1,14 @@
+fsl_clock.h:726:20:CLOCK_EnableClock	24	static
+fsl_clock.h:737:20:CLOCK_DisableClock	24	static
+fsl_clock.h:1045:20:CLOCK_SetSimSafeDivs	4	static
+fsl_clock.h:1437:20:CLOCK_SetXtal0Freq	16	static
+fsl_clock.h:1447:20:CLOCK_SetXtal32Freq	16	static
+fsl_smc.h:256:20:SMC_SetPowerModeProtection	16	static
+fsl_smc.h:275:33:SMC_GetPowerModeState	16	static
+fsl_rtc.h:389:20:RTC_SetOscCapLoad	24	static
+clock_config.c:79:13:CLOCK_CONFIG_SetRtcClock	16	static
+clock_config.c:113:13:CLOCK_CONFIG_SetFllExtRefDiv	16	static
+clock_config.c:121:6:BOARD_InitBootClocks	8	static
+clock_config.c:225:6:BOARD_BootClockHSRUN	8	static
+clock_config.c:334:6:BOARD_BootClockVLPR	8	static
+clock_config.c:454:6:BOARD_BootClockRUN	8	static
